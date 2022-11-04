@@ -4,7 +4,11 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="OpenTelemetry.Exporter.Console" Version="1.4.0-beta.2" />
+    <PackageReference Include="OpenTelemetry.Exporter.Geneva" Version="1.4.0-beta.4" />
+  </ItemGroup>
 
 </Project>
