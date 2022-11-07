@@ -16,14 +16,12 @@ public class Tutorial4
         var tracerProvider = SetupTracing();
         var loggerFactory = SetupLogging();
         var logger = loggerFactory.CreateLogger("main");
-        var logger2 = new Logger<Tutorial4>(loggerFactory);
 
         using (var activity = MyActivitySource.StartActivity("myactivity"))
         {
             activity?.SetTag("intKey", 200);
             activity?.SetTag("stringKey", "StringValue");
             logger.LogError("Request from {userid} received. status {status}", "awesome_geneva_user", 200);
-            logger2.LogError("Request from {userid} received. status {status}", "awesome_geneva_user", 200);
 
             AppCode();
         }
