@@ -29,14 +29,16 @@ MonAgentLauncher.exe -useenv
 c:\genevamonitoringagent.45.12.1\Monitoring\Agent\table2csv.exe  -query "" Log.tsf
 
 
-Tutorial1
+## Tutorial 1 - Intro
+
 1. Hello Tracing
-2. Add Activity code.
-3. Show that its no-op.
+2. Add Activity/Span.
+3. No-op !!
 4. Add ConsoleExporter
 5. Add Jaeger Exporter --if time good
 
-Tutorial2
+## Tutorial 2 - Geneva 
+
 6. Add GenevaExporter
    Nothing happens....
 
@@ -49,43 +51,46 @@ Tutorial2
 10. Show again that table2csv can still be used.
 11. Show telemetry in Jarvis
 
-Tutorial3
-Nested Activity
-Explain TraceContext, Propagation, 
-Show DT Config
-See if Jarvis has e2e view ready
+## Tutorial 3 - More Activity, Distributed Tracing in Geneva
 
-Tutorial4
-Add Logs and show they are correlated
+More Activity/Span
+TraceContext, Propagation
+Enable DT in Config
+Jarvis Trace Explorewr
+
+## Tutorial4
+
+Add Logs
+Correlation
+
+## Tutorial 5 - Asp.Net Core Application
+
+Add Tracing with instrumentation libraries
+Add logging.
+Host logs vs logs in request context.
+Make a request fail.
+
+Local Agent Validation for almost all troubleshooting.
 
 
+## 5 min break 
 
-Switch to Asp.Net Core App
-Add Tracing and show instrumentation libraries
-Show logging, and compare with Console (Logger factory)
-Show that host logs are missing dt...
-Show logs, failed request (500)
+## Intermediate Level topics - Tracing
 
-
-Reiterate Agent local validation, and the fully local agent config without GCS
-
-
-=============5 min break=================================
-Intermediate level topic
 Advanced sampling - defer to later sessions
-
 Add more tags from Controller
 Activity.Current?.SetTag("CustomKey", "CustomValue");
-
 Enrich/Filter using instrumentation libraries
-
-
 Enrich/Filter using processor.
 
+Do live. Walk through the process of how to do things in OTel
+land.
 
+### Geneva Specific capabilities
+Schema Explosion
 
+## Intermediate Level topics - Logging
 
-====
-Key Takeway, and try to get that in initial 10-15 mins.
-Consider showing local Jaeger.
-====
+Structured Log
+TableName Mappings
+
