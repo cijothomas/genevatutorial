@@ -18,7 +18,10 @@ builder.Services.AddOpenTelemetryTracing(builder =>
     builder.AddAspNetCoreInstrumentation();
     builder.AddHttpClientInstrumentation();
     builder.AddConsoleExporter();
-    builder.AddGenevaTraceExporter(options => options.ConnectionString = "EtwSession=OpenTelemetry");
+    builder.AddGenevaTraceExporter(options => 
+        {
+            options.ConnectionString = "EtwSession=OpenTelemetry";
+        });
 });
 
 // Add OTel Logging
