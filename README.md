@@ -4,17 +4,29 @@
 cd C:\genevamonitoringagent.45.12.1\Monitoring\Agent
 
 set MONITORING_DATA_DIRECTORY=%LocalAppData%\Monitoring
+
 set MONITORING_TENANT=%USERNAME%
+
 set MONITORING_ROLE=IFxSDKCI
+
 set MONITORING_ROLE_INSTANCE=%COMPUTERNAME%
+
 set MONITORING_GCS_ENVIRONMENT=Test
+
 set MONITORING_GCS_ACCOUNT=IFxSDKCI
+
 set MONITORING_GCS_NAMESPACE=IFxSDKCI
+
 set MONITORING_GCS_REGION=westus
+
 set MONITORING_GCS_THUMBPRINT=9A797CED79B78A91A3EE4E8D4837AD3B8913F14C
+
 set MONITORING_GCS_CERTSTORE=LOCAL_MACHINE\MY
+
 set MONITORING_CONFIG_VERSION=2.10
+
 set MDM_MONITORING_ACCOUNT=
+
 MonAgentLauncher.exe -useenv
 
 ## Full local
@@ -86,11 +98,12 @@ Enrich/Filter using processor.
 Do live. Walk through the process of how to do things in OTel
 land.
 
-### Geneva Specific capabilities
-Schema Explosion
-
 ## Intermediate Level topics - Logging
 
 Structured Log
+
+### Geneva Specific capabilities
+Schema Explosion
 TableName Mappings
 
+## OSS Tools like Jaeger
