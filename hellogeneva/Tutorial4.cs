@@ -17,7 +17,7 @@ public class Tutorial4
         var loggerFactory = SetupLogging();
         var logger = loggerFactory.CreateLogger("main");
 
-        using (var activity = MyActivitySource.StartActivity("myactivity"))
+        using (var activity = MyActivitySource.StartActivity("activity-name"))
         {
             activity?.SetTag("intKey", 200);
             activity?.SetTag("stringKey", "StringValue");
@@ -33,7 +33,7 @@ public class Tutorial4
 
     private static void AppCode()
     {
-        using (var activity = MyActivitySource.StartActivity("mychildactivity"))
+        using (var activity = MyActivitySource.StartActivity("activity-name-child"))
         {
             activity?.SetTag("intKey", 200);
             activity?.SetTag("stringKey", "StringValue");

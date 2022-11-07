@@ -15,50 +15,8 @@ builder.Services.AddSwaggerGen();
 // Add OTel Tracing
 builder.Services.AddOpenTelemetryTracing(builder => 
 {
-    builder.AddAspNetCoreInstrumentation((options) => options.Enrich
-        = (activity, eventName, rawObject) =>
-    {
-        if (eventName.Equals("OnStartActivity"))
-        {
-            if (rawObject is HttpRequest httpRequest)
-            {
-                activity.SetTag("requestProtocol", httpRequest.Protocol);
-            }
-        }
-        else if (eventName.Equals("OnStopActivity"))
-        {
-            if (rawObject is HttpResponse httpResponse)
-            {
-                activity.SetTag("responseLength", httpResponse.ContentLength);
-            }
-        }
-    });
-    builder.AddHttpClientInstrumentation((options) => options.Enrich
-    = (activity, eventName, rawObject) =>
-    {
-        if (eventName.Equals("OnStartActivity"))
-        {
-            if (rawObject is HttpRequestMessage request)
-            {
-                activity.SetTag("requestVersion", request.Version);
-            }
-        }
-        else if (eventName.Equals("OnStopActivity"))
-        {
-            // Console.WriteLine("On Stop");
-            if (rawObject is HttpResponseMessage response)
-            {
-                activity.SetTag("responseVersion", response.Version);
-            }
-        }
-        else if (eventName.Equals("OnException"))
-        {
-            if (rawObject is Exception exception)
-            {
-                activity.SetTag("stackTrace", exception.StackTrace);
-            }
-        }
-    });
+    builder.AddAspNetCoreInstrumentation();
+    builder.AddHttpClientInstrumentation();
     builder.AddConsoleExporter();
     builder.AddGenevaTraceExporter(options => options.ConnectionString = "EtwSession=OpenTelemetry");
 });

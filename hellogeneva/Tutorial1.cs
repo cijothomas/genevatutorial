@@ -8,11 +8,9 @@ public class Tutorial1
 
     public static void Start()
     {
-        Console.WriteLine("Welcome to Tutorial1 !");
-
         var tracerProvider = SetupTracing();
 
-        using (var activity = MyActivitySource.StartActivity("myactivity"))
+        using (var activity = MyActivitySource.StartActivity("activity-name"))
         {
             activity?.SetTag("intKey", 200);
             activity?.SetTag("stringKey", "StringValue");

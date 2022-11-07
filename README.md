@@ -2,6 +2,7 @@
 
 ## Geneva account 
 cd C:\genevamonitoringagent.45.12.1\Monitoring\Agent
+
 set MONITORING_DATA_DIRECTORY=%LocalAppData%\Monitoring
 set MONITORING_TENANT=%USERNAME%
 set MONITORING_ROLE=IFxSDKCI
@@ -43,7 +44,7 @@ c:\genevamonitoringagent.45.12.1\Monitoring\Agent\table2csv.exe  -query "" Log.t
    Nothing happens....
 
    Jarvis + GCS config + Cert. Use the script from GCS to launch agent
-   Show the cert thumbprint change required.
+   Pay attention to Cert thumbprint, GCS version
    
    Also mention the basicconfig
    
@@ -58,7 +59,7 @@ TraceContext, Propagation
 Enable DT in Config
 Jarvis Trace Explorewr
 
-## Tutorial4
+## Tutorial 4 - Logging 
 
 Add Logs
 Correlation
@@ -72,8 +73,7 @@ Make a request fail.
 
 Local Agent Validation for almost all troubleshooting.
 
-
-## 5 min break 
+## Break 
 
 ## Intermediate Level topics - Tracing
 

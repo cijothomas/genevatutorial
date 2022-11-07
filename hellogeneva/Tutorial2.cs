@@ -13,7 +13,7 @@ public class Tutorial2
 
         var tracerProvider = SetupTracing();
 
-        using (var activity = MyActivitySource.StartActivity("myactivity"))
+        using (var activity = MyActivitySource.StartActivity("activity-name"))
         {
             activity?.SetTag("intKey", 200);
             activity?.SetTag("stringKey", "StringValue");
